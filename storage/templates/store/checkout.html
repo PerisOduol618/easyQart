@@ -1,7 +1,54 @@
 {% extends 'store/main.html' %}
 {% load static %}
 {% block content %}
-        
-<h1>Checkout</h1>
 
+<div class="row">
+    <div class="col-lg-6">
+        <div class="box-element" id="from-wrapper">
+            <form id="form">
+                <div id="user-info">
+                    <div class="form-field">
+                        <input required class="form-control" name="name " type="text" placeholder="Name...">
+
+                    </div>
+
+                    <div class="form-field">
+                        <input required class="form-control" name="email " type="email" placeholder="Email...">
+                    </div>
+                    <div class="form-field">
+                        
+                    </div>
+                </div>
+                <div id="shipping-info">
+                    <hr>
+                    <p>shipping infromation</p>
+                    <hr>
+                    <div class="from-field">
+                        <input class="form-control" type="text" name="adress" placeholder="Adress...">
+                    </div>
+                    <div class="from-field">
+                        <input class="form-control" type="text" name="city" placeholder="City...">
+                    </div>
+                    <div class="from-field">
+                        <input class="form-control" type="text" name="zipcode" placeholder="Zip code...">
+                    </div>
+                    <div class="from-field">
+                        <input class="form-control" type="text" name="country" placeholder="Zipcode...">
+                    </div>
+
+                </div>
+                <hr>
+                <input id="form-button" class="btn btn-info  btn-block" type="submit" value="Continue">
+
+            </form>
+
+        </div>
+    </div>
+
+    <div class="col-lg-6">
+        <div class="box-element">
+
+        </div>
+    </div>
+</div>
 {% endblock content %}
