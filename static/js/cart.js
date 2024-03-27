@@ -5,5 +5,12 @@ for (i = 0; i < updateButton.length; i++){
         let productId = this.dataset.product
         let action = this.dataset.action
         console.log('productId:', productId, 'action:', action)
+
+        console.log('USER:', user)
+        if (user == 'AnonymousUser'){
+            console.log('user is not authenticated')
+        }else{
+            console.log('user is authenticated, sending data...')
+        }
     })
 }
