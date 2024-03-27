@@ -52,6 +52,7 @@ class OrderItems(models.Model):
     @property
     def get_total(self):
         total = self.product.price * self.quantity
+        return total
 
 # This model will be a child to order and will only be created if at the ordertime within an order is physical product(if product.digital=False)
 class ShippingAddress(models.Model):
