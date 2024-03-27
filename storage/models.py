@@ -48,6 +48,10 @@ class OrderItems(models.Model):
     quantity = models.IntegerField(default=0, null= True, blank=True)
     date_added = models.DateTimeField(auto_now_add=True)
 
+    #method to get the total value of our product by taking the price of our product multiplied by the quantity
+    @property
+    def get_total(self):
+        total = self.product.price * self.quantity
 
 # This model will be a child to order and will only be created if at the ordertime within an order is physical product(if product.digital=False)
 class ShippingAddress(models.Model):
