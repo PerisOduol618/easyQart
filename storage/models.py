@@ -44,7 +44,12 @@ class Order(models.Model):
         orderitems = self.orderitems_set.all()
         total = sum([item.get_total for item in orderitems])
         return total
- 
+    @property
+    def get_cart_items(self):
+        orderitems = self.orderitems_set.all()
+        total = sum([item.quantity for item in orderitems])
+        return total
+
 #Items that need to be added to our order with a many to one relationship with our order
 
 class OrderItems(models.Model):
