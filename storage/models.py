@@ -53,7 +53,7 @@ class Order(models.Model):
         return total
 
 #Items that need to be added to our order with a many to one relationship with our order
-class OrderItems(models.Model):
+class OrderItem(models.Model):
     product = models.ForeignKey(Product, on_delete=models.SET_NULL, null=True, blank=True)
     order = models.ForeignKey(Order, on_delete=models.SET_NULL, null=True, blank=True)
     quantity = models.IntegerField(default=0, null= True, blank=True)
