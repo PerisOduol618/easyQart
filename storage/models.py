@@ -41,14 +41,23 @@ class Order(models.Model):
     # get the total value of the cart
     @property
     def get_cart_total(self):
-        orderitems = self.orderitems_set.all()
+        orderitems = self.orderitem_set.all()
         total = sum([item.get_total for item in orderitems])
         return total
+    
+    # @property
+    # def shipping(self):
+    #     shipping = False
+    #     orderitems = self.orderitem_set.all()
+    #     for i in orderitems:
+    #         if i.product.digital == False:
+    #             shipping = True
+    #     return shipping
     
     # find how many items are in our cart  
     @property
     def get_cart_items(self):
-        orderitems = self.orderitems_set.all()
+        orderitems = self.orderitem_set.all()
         total = sum([item.quantity for item in orderitems])
         return total
 
