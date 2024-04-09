@@ -36,10 +36,10 @@ function updateUserOrder(productId,action){
         body:JSON.stringify({'productId': productId, 'action': action})
     })
     // return/get the updateItem response as a promise to fetch turn it to json value
-    .then((response)=>{
+    .then((response) =>{
         return response.json()
     })
-    .then((data)=>{
+    .then((data) =>{
         console.log('data:',data)
         location.reload
 

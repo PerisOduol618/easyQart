@@ -39,8 +39,8 @@
                 <div style="flex:1;">
                     <p class="quantity">{{item.quantity}}</p>
                     <div class="quantity">
-                        <img class="arrow-quantity" src="{% static 'images/arrow-up.png' %}" alt="">
-                        <img class="arrow-quantity" src="{% static 'images/arrow-down.png' %}" alt="">    
+                        <img data-product={{item.product.id}} data-action="add" class="arrow-quantity update-cart" src="{% static 'images/arrow-up.png' %}" alt="">
+                        <img data-product={{item.product.id}} data-action="remove" class="arrow-quantity update-cart" src="{% static 'images/arrow-down.png' %}" alt="">    
                         
                     </div>
                 </div>
