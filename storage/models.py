@@ -71,8 +71,13 @@ class OrderItem(models.Model):
     #method to get the total value of our product by taking the price of our product multiplied by the quantity
     @property
     def get_total(self):
-        total = self.product.price * self.quantity
-        return total
+        if self.product is not None:
+            total = self.product.price * self.quantity
+            print('Total:', total)
+            return total
+        else:
+            return 0 
+    
 
 # This model will be a child to order and will only be created if at the ordertime within an order is physical product(if product.digital=False)
 class ShippingAddress(models.Model):
