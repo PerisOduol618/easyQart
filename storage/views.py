@@ -6,6 +6,7 @@ from .models import *
 
 # Create your views here.
 def store(request):
+
     if request.user.is_authenticated:
         customer = request.user.customer
         order, created = Order.objects.get_or_create(customer=customer, complete=False)
@@ -15,8 +16,13 @@ def store(request):
         items = []
         order = {'get_cart_total':0, 'get_cart_items':0, 'shipping':False}
         cartItems = order['get_cart_items']
+      
+    if 'q' in request.GET:
+        q = request.GET['q']
+        products = Product.objects.filter(name__icontains=q)
+    else:
+        products = Product.objects.all()
 
-    products = Product.objects.all()
     context = {'products':products, 'cartItems':cartItems}
     return render(request, 'store/store.html', context)
 

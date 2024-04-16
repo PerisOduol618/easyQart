@@ -38,6 +38,7 @@ class Order(models.Model):
 
     def __str__(self):
         return str(self.id)
+ 
     # get the total value of the cart
     @property
     def get_cart_total(self):
@@ -77,7 +78,6 @@ class OrderItem(models.Model):
             return total
         else:
             return 0 
-    
 
 # This model will be a child to order and will only be created if at the ordertime within an order is physical product(if product.digital=False)
 class ShippingAddress(models.Model):
