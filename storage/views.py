@@ -4,7 +4,16 @@ from django.http import JsonResponse
 
 from .models import *
 
-# Create your views here.
+# Authentication
+def registerPage(request):
+    context = {}
+    return render(request, 'accounts/register.html' , context)
+
+
+def loginPage(request):
+    context = {}
+    return render(request, 'accounts/login.html' , context)
+
 def store(request):
 
     if request.user.is_authenticated:
