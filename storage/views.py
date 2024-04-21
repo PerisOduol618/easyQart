@@ -1,12 +1,20 @@
 import json
 from django.shortcuts import render
 from django.http import JsonResponse
+from django.contrib.auth.forms import UserCreationForm
 
 from .models import *
 
 # Authentication
 def registerPage(request):
-    context = {}
+    form = UserCreationForm(request.POST)
+    if form.is_valid():
+        form.save()
+
+    if request.method == 'POST':
+        form = UserCreationForm()
+
+    context = {'form':form}
     return render(request, 'accounts/register.html' , context)
 
 
