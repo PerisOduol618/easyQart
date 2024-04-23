@@ -21,7 +21,9 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('storage.urls'))
+    path('', include('storage.urls')),
+    path('auth', include('auth.urls'))
+
 ]
 
 # append the images to our urlpatterns list
